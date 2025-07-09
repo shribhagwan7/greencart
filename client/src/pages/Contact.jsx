@@ -5,59 +5,55 @@ const Contact = () => {
   return (
     <div
       id="contact"
-      className="w-full px-[12%] py-10 scroll-mt-20 bg-[url('./images/footer-bg-color.png')] bg-no-repeat bg-[length:90%_auto] bg-center dark:bg-none"
+      className="w-full px-4 sm:px-6 md:px-12 lg:px-32 py-12 bg-white dark:bg-dark text-gray-800 dark:text-white"
     >
-      <h4 className="text-center mb-2 text-lg Poppins underline">Contact with me</h4>
-      <h2 className="text-center text-5xl Poppins">Get in touch</h2>
-      <p className="text-center max-w-2xl mx-auto mt-5 mb-12 Poppins">
+      <h4 className="text-center mb-2 text-lg underline font-medium">Contact with me</h4>
+      <h2 className="text-center text-4xl sm:text-5xl font-bold">Get in touch</h2>
+      <p className="text-center max-w-2xl mx-auto mt-4 mb-12 text-gray-600 dark:text-gray-300">
         I'd love to hear from you! If you have any questions, comments or feedback, please use the form below.
       </p>
 
       <form
         method="POST"
         action="https://api.web3forms.com/submit"
-        className="max-w-2xl mx-auto"
+        className="max-w-2xl mx-auto space-y-6"
       >
-        <input
-          type="hidden"
-          name="access_key"
-          value="098668d0-f71b-4b9c-89f2-ef6f98256198"
-        />
+        <input type="hidden" name="access_key" value="098668d0-f71b-4b9c-89f2-ef6f98256198" />
 
-        {/* 👇 Responsive Name & Email */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10 mb-8">
+        {/* Row Inputs */}
+        <div className="flex flex-col sm:flex-row gap-6">
           <input
             type="text"
-            placeholder="Enter your name"
             name="name"
             required
-            className="w-full p-3 outline-none border-[0.5px] border-gray-400 rounded-md bg-white dark:bg-darkHover/30 dark:border-white/90"
+            placeholder="Enter your name"
+            className="flex-1 p-4 rounded-md border border-gray-300 dark:border-gray-500 bg-white dark:bg-gray-800 placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-0"
           />
           <input
             type="email"
-            placeholder="Enter your email"
             name="email"
             required
-            className="w-full p-3 outline-none border-[0.5px] border-gray-400 rounded-md bg-white dark:bg-darkHover/30 dark:border-white/90"
+            placeholder="Enter your email"
+            className="flex-1 p-4 rounded-md border border-gray-300 dark:border-gray-500 bg-white dark:bg-gray-800 placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-0"
           />
         </div>
 
-        {/* 👇 Message Box */}
+        {/* Message Box */}
         <textarea
-          rows="6"
           name="message"
-          placeholder="Enter your messages"
           required
-          className="w-full p-4 outline-none border-[0.5px] border-gray-400 rounded-md bg-white mb-6 dark:bg-darkHover/30 dark:border-white/90"
+          rows="6"
+          placeholder="Enter your messages"
+          className="w-full p-4 rounded-md border border-gray-300 dark:border-gray-500 bg-white dark:bg-gray-800 placeholder-gray-400 dark:placeholder-gray-500 resize-none focus:outline-none focus:ring-0"
         ></textarea>
 
-        {/* 👇 Submit Button */}
+        {/* Submit Button */}
         <button
           type="submit"
-          className="py-3 px-8 w-max flex items-center justify-between gap-2 bg-black/80 text-white rounded-full mx-auto hover:bg-black duration-500 dark:bg-transparent dark:border-[0.5px] dark:hover:bg-darkHover cursor-pointer"
+          className="mx-auto flex items-center gap-2 justify-center bg-black dark:bg-white text-white dark:text-black px-6 py-3 rounded-full hover:opacity-90 transition duration-300 cursor-pointer"
         >
           Submit now
-          <img src={assets.white_arrow_icon} className="w-4" alt="arrow" />
+          <img src={assets.white_arrow_icon} className="w-4 dark:invert" alt="arrow" />
         </button>
       </form>
     </div>
@@ -65,4 +61,3 @@ const Contact = () => {
 };
 
 export default Contact;
-
