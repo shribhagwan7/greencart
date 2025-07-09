@@ -13,7 +13,8 @@ const Contact = () => {
         I'd love to hear from you! If you have any questions, comments or feedback, please use the form below.
       </p>
 
-      <form
+      <form 
+        target="_blank" 
         method="POST"
         action="https://api.web3forms.com/submit"
         className="max-w-2xl mx-auto space-y-6"
