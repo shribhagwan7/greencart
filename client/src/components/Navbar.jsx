@@ -79,7 +79,7 @@ const Navbar = () => {
                 </div>
                 <button onClick={() => open ? setOpen(false) : setOpen(true)} aria-label="Menu" className="sm:hidden">
                     {/* Menu Icon SVG */}
-                    <img src={assets.menu_icon} alt='menu' />
+                    <img src={assets.menu_icon} alt='menu' className="cursor-pointer" />
                 </button>
             </div>
 
@@ -97,14 +97,14 @@ const Navbar = () => {
                                 setOpen(false);
                                 setShowUserLogin(true);
                             }}
-                            className="mt-3 px-4 py-2 bg-primary text-white rounded-full hover:bg-primary-dull transition"
+                            className="mt-3 px-4 py-2 bg-primary text-white rounded-full hover:bg-primary-dull transition cursor-pointer"
                         >
                             Login
                         </button>
                     ) : (
                         <button
                             onClick={logout}
-                            className="mt-3 px-4 py-2 bg-primary text-white rounded-full hover:bg-primary-dull transition"
+                            className="mt-3 px-4 py-2 bg-primary text-white rounded-full hover:bg-primary-dull transition cursor-pointer"
                         >
                             Logout
                         </button>
