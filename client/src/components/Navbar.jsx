@@ -41,6 +41,7 @@ const Navbar = () => {
             {/* Desktop Menu */}
             <div className="hidden sm:flex items-center gap-8">
 
+                <NavLink to='/seller' className="px-4 py-1 border border-gray-300 rounded-full text-sm hover:bg-primary/10 transition">Seller Dashboard</NavLink>
                 <NavLink to='/'>Home</NavLink>
                 <NavLink to='/products'>All Products</NavLink>
                 <NavLink to='/contact'>Contact</NavLink>
