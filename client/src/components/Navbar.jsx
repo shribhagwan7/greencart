@@ -85,29 +85,33 @@ const Navbar = () => {
 
             {/* Mobile Menu */}
             {open && (
-                <div className={`${open ? 'flex' : 'hidden'} absolute top-[60px] left-0 w-full bg-white shadow-md py-4 flex-col items-start gap-2 px-5 text-sm md:hidden`}>
+                <div className="absolute top-full left-0 w-full bg-white shadow-md py-4 px-6 flex flex-col gap-4 text-sm z-50 border-t border-gray-200 md:hidden">
+                    <NavLink to='/' onClick={() => setOpen(false)} className="hover:text-primary">Home</NavLink>
+                    <NavLink to='/products' onClick={() => setOpen(false)} className="hover:text-primary">All Products</NavLink>
+                    {user && <NavLink to='/my-orders' onClick={() => setOpen(false)} className="hover:text-primary">My Orders</NavLink>}
+                    <NavLink to='/contact' onClick={() => setOpen(false)} className="hover:text-primary">Contact</NavLink>
 
-                    <NavLink to='/' onClick={() => setOpen(false)}>Home</NavLink>
-                    <NavLink to='/products' onClick={() => setOpen(false)}>All Products</NavLink>
-                    {user &&
-                        <NavLink to='/my-orders' onClick={() => setOpen(false)}>My Orders</NavLink>
-                    }
-                    <NavLink to='/contact' onClick={() => setOpen(false)}>Contact</NavLink>
                     {!user ? (
-                        <button onClick={() => {
-                            setOpen(false);
-                            setShowUserLogin(true);
-                        }} className="cursor-pointer px-6 py-2 mt-2 bg-primary hover:bg-primary-dull transition text-white rounded-full text-sm">
+                        <button
+                            onClick={() => {
+                                setOpen(false);
+                                setShowUserLogin(true);
+                            }}
+                            className="mt-3 px-4 py-2 bg-primary text-white rounded-full hover:bg-primary-dull transition"
+                        >
                             Login
                         </button>
                     ) : (
-                        <button onClick={logout} className="cursor-pointer px-6 py-2 mt-2 bg-primary hover:bg-primary-dull transition text-white rounded-full text-sm">
+                        <button
+                            onClick={logout}
+                            className="mt-3 px-4 py-2 bg-primary text-white rounded-full hover:bg-primary-dull transition"
+                        >
                             Logout
                         </button>
                     )}
-
                 </div>
             )}
+
 
         </nav>
     )
