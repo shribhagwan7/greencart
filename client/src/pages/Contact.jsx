@@ -27,14 +27,14 @@ const Contact = () => {
             name="name"
             required
             placeholder="Enter your name"
-            className="flex-1 p-4 rounded-md border border-gray-300 bg-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            className="flex-1 p-4 rounded-md border border-gray-300 bg-white placeholder-gray-500 focus:outline-none focus:border-blue-400"
           />
           <input
             type="email"
             name="email"
             required
             placeholder="Enter your email"
-            className="flex-1 p-4 rounded-md border border-gray-300 bg-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            className="flex-1 p-4 rounded-md border border-gray-300 bg-white placeholder-gray-500 focus:outline-none focus:border-blue-400"
           />
         </div>
 
@@ -44,13 +44,13 @@ const Contact = () => {
           required
           rows="6"
           placeholder="Enter your messages"
-          className="w-full p-4 rounded-md border border-gray-300 bg-white placeholder-gray-500 resize-none focus:outline-none focus:ring-2 focus:ring-blue-400"
+          className="w-full p-4 rounded-md border border-gray-300 bg-white placeholder-gray-500 resize-none focus:outline-none focus:border-blue-400"
         ></textarea>
 
         {/* Submit Button */}
         <button
           type="submit"
-          className="block mx-auto flex items-center gap-2 justify-center bg-black text-white px-6 py-3 rounded-full hover:bg-gray-800 transition duration-300"
+          className="block mx-auto flex items-center gap-2 justify-center bg-black text-white px-6 py-3 rounded-full hover:bg-gray-800 transition duration-300 cursor-pointer"
         >
           Submit now
           <img src={assets.white_arrow_icon} className="w-4" alt="arrow" />
