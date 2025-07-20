@@ -40,10 +40,10 @@ const Orders = () => {
                                 alt="boxIcon"
                             />
                             <div>
-                                {order.items.map((item, index) => (
+                                {order.items?.map((item, index) => (
                                     <div key={index} className="flex flex-col">
                                         <p className="font-medium">
-                                            {item.product.name}{" "}
+                                            {item?.product?.name || "Unnamed Product"}{" "}
                                             <span className="text-primary">x {item.quantity}</span>
                                         </p>
                                     </div>
@@ -51,7 +51,6 @@ const Orders = () => {
                             </div>
                         </div>
 
-                        {/* ✅ FIXED: Safe access address with optional chaining */}
                         {order.address ? (
                             <div className="text-sm md:text-base text-black/60">
                                 <p className="text-black/80">
