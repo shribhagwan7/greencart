@@ -41,10 +41,19 @@ export const getUserOrders = async (req, res) => {
         const orders = await Order.find({
             userId,
             $or: [{ paymentType: "COD" }, { isPaid: true }]
-        }).populate("items.product address").sort({ createdAt: -1 });
-        res.json({ success: true, orders })
+        })
+        .populate("items.product address")
+        .sort({ createdAt: -1 });
+
+        // Filter out items with null product
+        const cleanedOrders = orders.map(order => ({
+            ...order._doc,
+            items: order.items.filter(item => item.product != null)
+        }));
+
+        res.json({ success: true, orders: cleanedOrders });
     } catch (error) {
-        res.json({ success: false, message: error.message })
+        res.json({ success: false, message: error.message });
     }
 }
 
